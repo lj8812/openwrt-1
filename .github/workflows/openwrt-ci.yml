@@ -10,7 +10,7 @@ name: OpenWrt-CI
 on:
   push:
     branches: 
-      - master
+      - v19.07
   # schedule:
   #   - cron: 0 20 * * *
   # release:
@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: v19.07
 
       - name: Space cleanup
         env:
