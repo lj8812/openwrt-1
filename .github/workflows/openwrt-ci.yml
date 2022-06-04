@@ -10,7 +10,7 @@ name: OpenWrt-CI
 on:
   push:
     branches: 
-      - v19.07
+      - 19.07
   # schedule:
   #   - cron: 0 20 * * *
   # release:
@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: v19.07
+          ref: 19.07
 
       - name: Space cleanup
         env:
@@ -197,7 +197,7 @@ jobs:
           # sed -i 's/192.168.1.1/192.168.6.168/g' package/base-files/files/bin/config_generate
           
           # 1.清除默认密码/改密码为
-          # sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
+          sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
           
           # 2.修改默认主题
           # sed -i 's/luci-theme-bootstrap/luci-theme-argonne/g' feeds/luci/collections/luci/Makefile
